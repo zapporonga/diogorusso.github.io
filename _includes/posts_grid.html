@@ -1,0 +1,53 @@
+<div class="preloader">
+  <div class="status">
+    <p class="text-center">my work is comming :)</p>
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+      <div class="rect5"></div>
+    </div> <!-- spinner-->
+  </div><!-- status -->
+</div><!--preloader-->
+
+
+<div class="grid">
+  <div class="grid-sizer"></div>
+{% if site.paginate %}
+{% for post in paginator.posts %}
+  <div class="grid-item">
+     <a href="{{  post.url | prepend: site.baseurl }}">
+           
+       <img src="{{post.thumbnail}}" />
+     </a> 
+     <a href="{{  post.url | prepend: site.baseurl }}">{{post.title}}</a>
+     <h6>{{post.categories}}</h6> 
+  </div>
+{% endfor %}
+{% endif %}
+</div>
+
+
+
+<!-- PAGINATION -->
+
+<nav class="pagination" role="navigation">
+	{% if paginator.previous_page %}
+	  {% if paginator.previous_page == 1 %}
+      	<a class="newer-posts" href="{{ site.baseurl }}/">Newer</a>
+      {% else %}
+	  	<a class="newer-posts" href="{{ site.baseurl }}/page{{ paginator.previous_page }}">Newer</a>
+	  {% endif %}
+	{% else %}
+    	<span class="newer-posts faded">Newer</span>
+    {% endif %}
+
+    <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+      {% if paginator.next_page %} 
+        <a class="older-posts" href="{{ site.baseurl }}/page{{ paginator.next_page }}/">Older</a>
+      {% else %}
+      <span class="older-posts faded">Older</span>
+      {% endif %}
+  </nav>
+

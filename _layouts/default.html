@@ -5,17 +5,17 @@
 
   <body>
 
-    {% include header.html %}
+  {% include top_menu.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+  <div class="row">
+    <div class="small-12 colunms" style="padding-top:80px;">
+      {{ content }}
     </div>
-
-    {% include footer.html %}
-    {% include scripts.html %}
-
+  </div>
+  
+  {% include footer.html %}
+  {% include scripts.html %}
+  
   </body>
 
 </html>

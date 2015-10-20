@@ -1,29 +1,76 @@
-
-
-/* ---- grid ---- */
+//GRID ITEM
 
 .grid {
-  background: #DDD;
-  max-width: 1200px;
+ width: 100%
 }
 
-/* clear fix */
+// CLEAR FIX
 .grid:after {
   content: '';
   display: block;
   clear: both;
 }
 
-/* ---- .grid-item ---- */
+// GRID SIZER + GRID ITEM + IMG
 
+.grid-sizer,
 .grid-item {
-  float: left;
-  width: 100px;
-  height: 100px;
-  background: #0D8;
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.7);
+  width: 33.333%;
 }
 
-.grid-item--width2 { width: 200px; }
-.grid-item--height2 { height: 200px; }
+.grid-item {
+  padding:1.2em;
+  min-height: 300px;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+  }
+
+// MEDIA QUERIES
+
+//small screens
+@media screen and (max-width: 40em) {
+  .grid-sizer,
+  .grid-item
+  { width: 100%; }
+}
+
+//medium screens
+@media screen and (min-width: 40.063em) and (max-width: 64em) {
+  .grid-sizer,
+  .grid-item
+  { width: 50%; }
+}
+
+//large screens
+@media screen and (min-width: 64.063em) and (max-width: 90em) {
+  .grid-sizer,
+  .grid-item
+  { width: 33.333%; }
+}
+
+//X large screens
+@media screen and (min-width: 90.063em) and (max-width: 120em) {
+  .grid-sizer,
+  .grid-item
+  { width: 33.333%; }
+}
+
+//X large screens
+@media screen and (min-width: 120.063em) {
+  .grid-sizer,
+  .grid-item
+  { width: 25%; }
+}
+
+
+
+
+
+
+
+
+
+

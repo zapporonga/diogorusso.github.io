@@ -1,7 +1,8 @@
-<script src="vendors/foundation/js/vendor/jquery.js"></script>
-<script src="vendors/foundation/js/vendor/fastclick.js"></script>
-<script src="vendors/foundation/js/foundation.min.js"></script>
-<script src="vendors/isotope/dist/isotope.pkgd.min.js"></script>
+<script src="{{ site.baseurl }}/vendors/foundation/js/vendor/jquery.js"></script>
+<script src="{{ site.baseurl }}/vendors/foundation/js/vendor/fastclick.js"></script>
+<script src="{{ site.baseurl }}/vendors/foundation/js/foundation.min.js"></script>
+<script src="{{ site.baseurl }}/vendors/isotope/dist/isotope.pkgd.min.js"></script>
+<script src="{{ site.baseurl }}/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
 
 <script>
 	//foundation init
@@ -9,15 +10,25 @@
 
 	//isotope init
 
-	$(document).ready( function() {
-	  
-	  $('.grid').isotope({
-	    itemSelector: '.grid-item',
-	    masonry: {
-	      columnWidth: 100
-	    }
-	  });
+	$(function(){
+    var $grid= $('.grid').isotope({
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        columnWidth: '.grid-sizer',
+        isAnimated: !Modernizr.csstransitions,
+        transitionDuration: 0,
+        isInitLayout: true,
+        });
+        $(".grid-item").addClass('transp');
+        $grid.imagesLoaded().always(function(){
+            var elements=".grid-item";
+            $(".grid-item ").removeClass('transp').addClass('fade-in');
+            var $elements=$(elements);
+            $grid.append($elements);
+            $grid.isotope();
+            $('.preloader').fadeOut('slow');
+        });
 
-	});
+    });
 	
 </script>
