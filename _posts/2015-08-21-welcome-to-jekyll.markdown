@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "welcome to Jekyll!"
 date:   2015-08-21 11:51:26
 categories: jekyll update
 ---

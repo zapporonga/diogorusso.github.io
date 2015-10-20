@@ -2,7 +2,12 @@
 layout: default
 ---
 
-<div class="home">
+<div data-alert class="alert-box">
+  hello
+  <a href="#" class="close">&times;</a>
+</div>
+
+<div class="home animated bounceIn">
 
   <h1 class="page-heading">Posts</h1>
 
@@ -21,3 +26,24 @@ layout: default
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
+
+
+
+<h1>Isotope - masonry layout mode</h1>
+
+<div class="grid">
+  <div class="grid-item grid-item--width2"></div>
+  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--width2 grid-item--height2"></div>
+  <div class="grid-item grid-item--width2"></div>
+  <div class="grid-item grid-item--width2"></div>
+  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item grid-item--width2"></div>
+  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+</div>
+
